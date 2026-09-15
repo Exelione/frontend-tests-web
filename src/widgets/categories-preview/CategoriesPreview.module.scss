@@ -1,0 +1,63 @@
+@use '@app/styles/variables' as *;
+@use '@app/styles/mixins' as *;
+
+.section {
+  padding: $spacing-xl * 2 0;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: $spacing-xl * 1.5;
+
+  @include mobile {
+    font-size: $font-size-xl;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: $spacing-md;
+}
+
+.card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+}
+
+.categoryName {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  font-family: $font-mono;
+  color: var(--accent);
+}
+
+.categorySlug {
+  font-size: $font-size-sm;
+  color: var(--text-secondary);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: $spacing-xl;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: $spacing-xl;
+}

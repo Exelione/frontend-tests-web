@@ -1,0 +1,62 @@
+@use '@app/styles/variables' as *;
+@use '@app/styles/mixins' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.centerLoading {
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-xl * 2;
+  color: var(--text-secondary);
+  font-size: $font-size-lg;
+}
+
+.error {
+  @include card;
+  text-align: center;
+  color: var(--error);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.fetchingBar {
+  display: flex;
+  justify-content: center;
+  padding: $spacing-sm;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: $radius-md;
+  margin-bottom: $spacing-md;
+}
+
+.finished {
+  @include card;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: $spacing-xl * 2;
+}
+
+.finishedTitle {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  margin-bottom: $spacing-md;
+}
+
+.finishedText {
+  color: var(--text-secondary);
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.finishedActions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+}

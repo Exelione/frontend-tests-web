@@ -1,0 +1,69 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  width: 100%;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.selectWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    pointer-events: none;
+    margin-top: -4px;
+    transition: transform 0.2s;
+  }
+}
+
+.select {
+  width: 100%;
+  padding: $spacing-sm 40px $spacing-sm $spacing-md;
+  appearance: none;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: $radius-md;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: $font-size-md;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Стили для option — не везде работает, но браузеры подхватят
+  option {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+}
+
+.error {
+  font-size: $font-size-xs;
+  color: var(--error);
+}

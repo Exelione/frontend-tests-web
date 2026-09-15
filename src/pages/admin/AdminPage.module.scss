@@ -1,0 +1,69 @@
+@use '@app/styles/variables' as *;
+@use '@app/styles/mixins' as *;
+
+.page {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    margin-bottom: $spacing-xl;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    @include card;
+}
+
+.hint {
+    font-size: $font-size-xs;
+    color: var(--text-secondary);
+    margin-bottom: $spacing-sm;
+}
+
+.answersSection {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.answerRow {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+}
+
+.radio {
+    margin-top: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.error {
+    padding: $spacing-sm $spacing-md;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error);
+    border-radius: $radius-md;
+    color: var(--error);
+    font-size: $font-size-sm;
+}
+
+.success {
+    padding: $spacing-sm $spacing-md;
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid var(--success);
+    border-radius: $radius-md;
+    color: var(--success);
+    font-size: $font-size-sm;
+}
+
+.loading {
+    @include flex-center;
+    padding: $spacing-xl * 2;
+}

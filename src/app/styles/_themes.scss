@@ -1,0 +1,29 @@
+// Тёмная тема (по умолчанию)
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1f1f1f;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --accent: #22c55e;
+  --accent-hover: #16a34a;
+  --accent-muted: #166534;
+  --border: #262626;
+  --success: #22c55e;
+  --error: #ef4444;
+}
+
+// Светлая тема
+html.light {
+  --bg-primary: #fafaf9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f5f5f4;
+  --text-primary: #1c1917;
+  --text-secondary: #78716c;
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-muted: #d1fae5;
+  --border: #e7e5e4;
+  --success: #059669;
+  --error: #dc2626;
+}

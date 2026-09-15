@@ -1,0 +1,73 @@
+@use '@app/styles/variables' as *;
+@use '@app/styles/mixins' as *;
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+  padding-top: $spacing-lg;
+  border-top: 1px solid var(--border);
+}
+
+.total {
+  font-size: $font-size-sm;
+  color: var(--text-secondary);
+  margin-bottom: $spacing-sm;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+}
+
+.text {
+  color: var(--text-primary);
+  font-weight: 500;
+  flex: 1;
+}
+
+.count {
+  color: var(--text-secondary);
+  font-family: $font-mono;
+  font-size: $font-size-sm;
+  white-space: nowrap;
+}
+
+.bar {
+  position: relative;
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: $radius-full;
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: $radius-full;
+  transition: width 0.5s ease;
+
+  &.correct {
+    background-color: var(--success);
+  }
+
+  &.wrong {
+    background-color: var(--error);
+  }
+
+  &.neutral {
+    background-color: var(--text-secondary);
+  }
+}

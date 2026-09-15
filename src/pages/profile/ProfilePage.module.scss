@@ -1,0 +1,226 @@
+@use '@app/styles/variables' as *;
+@use '@app/styles/mixins' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.card {
+  @include card;
+}
+
+/* Профиль */
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid var(--border);
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.avatar {
+  @include flex-center;
+  width: 80px;
+  height: 80px;
+  border-radius: $radius-full;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: $font-size-2xl;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.name {
+  font-size: $font-size-xl;
+  font-weight: 700;
+}
+
+.email {
+  color: var(--text-secondary);
+  font-size: $font-size-md;
+}
+
+.joined {
+  color: var(--text-secondary);
+  font-size: $font-size-sm;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-sm;
+}
+
+/* Общая статистика */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  @include card;
+  text-align: center;
+}
+
+.statValue {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: $font-mono;
+}
+
+.good {
+  color: var(--success);
+}
+
+.medium {
+  color: #f59e0b;
+}
+
+.bad {
+  color: var(--error);
+}
+
+.statLabel {
+  font-size: $font-size-sm;
+  color: var(--text-secondary);
+  margin-top: $spacing-xs;
+}
+
+/* Секции */
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  margin-bottom: $spacing-md;
+}
+
+/* Категории */
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+}
+
+.categoryName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.categoryStats {
+  color: var(--text-secondary);
+  font-family: $font-mono;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: $radius-full;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: $radius-full;
+  transition: width 0.5s ease;
+}
+
+/* Последние ответы */
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.recentItem {
+  padding: $spacing-md;
+  background-color: var(--bg-tertiary);
+  border-radius: $radius-md;
+  border-left: 3px solid var(--border);
+}
+
+.recentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xs;
+}
+
+.recentStatus {
+  font-size: $font-size-lg;
+  font-weight: 700;
+}
+
+.correct {
+  color: var(--success);
+}
+
+.wrong {
+  color: var(--error);
+}
+
+.recentDate {
+  font-size: $font-size-xs;
+  color: var(--text-secondary);
+}
+
+.recentQuestion {
+  font-size: $font-size-md;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: $spacing-xs;
+}
+
+.recentAnswer {
+  font-size: $font-size-sm;
+  color: var(--text-secondary);
+}
+
+/* Загрузка / ошибки */
+.loading,
+.loadingBlock {
+  @include flex-center;
+  padding: $spacing-xl * 2;
+  color: var(--text-secondary);
+}
+
+.error {
+  @include card;
+  text-align: center;
+  color: var(--error);
+}

@@ -1,0 +1,39 @@
+.footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.container {
+  @include flex-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  gap: $spacing-md;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copy {
+  color: var(--text-secondary);
+  font-size: $font-size-sm;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: $font-size-sm;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}

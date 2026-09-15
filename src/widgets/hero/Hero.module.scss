@@ -1,0 +1,93 @@
+@use '@app/styles/variables' as *;
+@use '@app/styles/mixins' as *;
+
+.hero {
+  padding: $spacing-xl * 2 $spacing-lg;
+  text-align: center;
+
+  @include mobile {
+    padding: $spacing-xl $spacing-md;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-md;
+  background-color: var(--accent-muted);
+  color: var(--accent);
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  margin-bottom: $spacing-lg;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: $spacing-lg;
+  font-family: $font-mono;
+
+  span {
+    color: var(--accent);
+  }
+
+  @include tablet {
+    font-size: 48px;
+  }
+
+  @include mobile {
+    font-size: 32px;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto $spacing-xl;
+  line-height: 1.6;
+
+  @include mobile {
+    font-size: $font-size-md;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  gap: $spacing-xl;
+  justify-content: center;
+  margin-top: $spacing-xl * 2;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: $font-mono;
+}
+
+.statLabel {
+  font-size: $font-size-sm;
+  color: var(--text-secondary);
+  margin-top: $spacing-xs;
+}

@@ -1,0 +1,6 @@
+@use '@app/styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
