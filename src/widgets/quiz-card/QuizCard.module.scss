@@ -192,3 +192,61 @@
   gap: $spacing-sm;
   flex-wrap: wrap;
 }
+
+.explanationSection {
+  margin-top: $spacing-lg;
+}
+
+.explanationToggle {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  background-color: var(--bg-tertiary);
+  border: 1px dashed var(--border);
+  border-radius: $radius-md;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: $font-size-md;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+
+.explanation {
+  padding: $spacing-md;
+  background-color: var(--accent-muted);
+  border-left: 3px solid var(--accent);
+  border-radius: $radius-md;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.explanationTitle {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: $spacing-xs;
+}
+
+.explanationText {
+  color: var(--text-primary);
+  font-size: $font-size-md;
+  line-height: 1.6;
+}

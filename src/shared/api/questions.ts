@@ -3,6 +3,7 @@ import type { Question } from './types';
 
 export interface CreateQuestionDto {
   text: string;
+  explanation?: string;
   categoryId: string;
   answers: Array<{ text: string; isCorrect: boolean }>;
 }

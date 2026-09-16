@@ -14,6 +14,7 @@ export interface Answer {
 export interface Question {
   id: string;
   text: string;
+  explanation?: string | null;
   category: Category;
   answers: Answer[];
   createdAt: string;

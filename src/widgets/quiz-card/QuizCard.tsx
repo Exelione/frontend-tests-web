@@ -23,6 +23,7 @@ export function QuizCard({
   const [result, setResult] = useState<AnswerResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showExplanation, setShowExplanation] = useState(false);
 
   const handleAnswer = async (answerId: string) => {
     if (result || loading) return;
@@ -50,6 +51,7 @@ export function QuizCard({
     setResult(null);
     setError(null);
     setLoading(false);
+    setShowExplanation(false);
     onNext();
   };
 
@@ -116,6 +118,46 @@ export function QuizCard({
       )}
 
       {result && <AnswerStats stats={result.stats} />}
+
+      {/* ← Объяснение */}
+      {result && question.explanation && (
+        <div className={styles.explanationSection}>
+          {!showExplanation ? (
+            <button
+              type="button"
+              className={styles.explanationToggle}
+              onClick={() => setShowExplanation(true)}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className={styles.icon}
+              >
+                <path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z" />
+              </svg>
+              Показать объяснение
+            </button>
+          ) : (
+            <div className={styles.explanation}>
+              <div className={styles.explanationTitle}>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className={styles.icon}
+                >
+                  <path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z" />
+                </svg>
+                Объяснение</div>
+              <p className={styles.explanationText}>{question.explanation}</p>
+            </div>
+          )}
+        </div>
+      )}
+
 
       {result && (
         <div className={styles.footer}>
