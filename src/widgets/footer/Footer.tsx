@@ -8,11 +8,21 @@ export function Footer() {
           © {new Date().getFullYear()} frontend.questions
         </span>
         <div className={styles.links}>
-          <a href="#" className={styles.link}>
-            О проекте
-          </a>
-          <a href="#" className={styles.link}>
+          <a
+            href="https://github.com/Exelione/frontend-tests-web"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
             GitHub
+          </a>
+          <a
+            href="https://github.com/Exelione/frontend-tests-web#-о-проекте"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            О проекте
           </a>
         </div>
       </div>
