@@ -11,6 +11,7 @@ interface QuizCardProps {
   currentIndex: number;
   totalQuestions: number;
   onNext: () => void;
+  onCorrect: () => void;
 }
 
 export function QuizCard({
@@ -18,6 +19,7 @@ export function QuizCard({
   currentIndex,
   totalQuestions,
   onNext,
+  onCorrect,
 }: QuizCardProps) {
   const [selectedAnswerId, setSelectedAnswerId] = useState<string | null>(null);
   const [result, setResult] = useState<AnswerResponse | null>(null);
@@ -39,6 +41,9 @@ export function QuizCard({
         getSessionId(),
       );
       setResult(response);
+      if (response.correct) {
+        onCorrect();
+      }
     } catch (err) {
       setError((err as Error).message || 'Не удалось отправить ответ');
     } finally {
@@ -151,7 +156,8 @@ export function QuizCard({
                 >
                   <path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z" />
                 </svg>
-                Объяснение</div>
+                Объяснение
+              </div>
               <p className={styles.explanationText}>{question.explanation}</p>
             </div>
           )}
