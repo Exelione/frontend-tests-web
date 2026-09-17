@@ -1,2 +1,2 @@
-swagger: frontend-tests-api.relaxdev.ru
+swagger: frontend-tests-api.relaxdev.ru/api
 
