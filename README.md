@@ -28,21 +28,6 @@
 |---|---|
 | **Приложение** | [frontend-tests-web.relaxdev.ru](https://frontend-tests-web.relaxdev.ru) |
 | **Swagger UI (API)** | [frontend-tests-api.relaxdev.ru/api](https://frontend-tests-api.relaxdev.ru/api) |
-| **API Base URL** | `https://frontend-tests-api.relaxdev.ru` |
-
----
-
-## 🏗️ Архитектура
-┌─────────────────────┐ ┌─────────────────────┐ ┌─────────────────────┐
-│ │ HTTPS │ │ Prisma │ │
-│ Frontend (SPA) │ ──────> │ Backend (REST) │ ──────> │ PostgreSQL │
-│ React + Vite │ │ NestJS + Prisma │ │ Supabase │
-│ │ │ │ │ │
-└─────────────────────┘ └─────────────────────┘ └─────────────────────┘
-RelaxDev RelaxDev Supabase
-(Docker + SSL) (Docker + SSL) (Free tier)
-
----
 
 ## 🛠️ Стек
 
