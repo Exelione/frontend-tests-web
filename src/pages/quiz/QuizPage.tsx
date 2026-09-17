@@ -85,19 +85,21 @@ interface QuizContentProps {
 function QuizContent({ questions }: QuizContentProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [finished, setFinished] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
 
   if (finished || currentIndex >= questions.length) {
     return (
       <div className={styles.finished}>
         <h2 className={styles.finishedTitle}>Ты ответил на все вопросы!</h2>
         <p className={styles.finishedText}>
-          Правильных ответов: {currentIndex} из {questions.length}
+          Правильных ответов: {correctCount} из {questions.length} {/* ← исправлено */}
         </p>
         <div className={styles.finishedActions}>
           <Button
             onClick={() => {
               setCurrentIndex(0);
               setFinished(false);
+              setCorrectCount(0);
             }}
           >
             Пройти заново
@@ -121,12 +123,17 @@ function QuizContent({ questions }: QuizContentProps) {
     }
   };
 
+  const handleCorrect = () => {
+    setCorrectCount((prev) => prev + 1);
+  };
+
   return (
     <QuizCard
       question={currentQuestion}
       currentIndex={currentIndex}
       totalQuestions={questions.length}
       onNext={handleNext}
+      onCorrect={handleCorrect}
     />
   );
 }
