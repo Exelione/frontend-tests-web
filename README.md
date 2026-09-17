@@ -34,7 +34,7 @@
 ### Фронтенд
 - **React 19** + **Vite**
 - **TypeScript**
-- **SCSS-модули** (без Tailwind)
+- **SCSS-модули**
 - **React Router v7** — роутинг
 - **TanStack Query v5** — работа с API
 - **@marsidev/react-turnstile** — капча
